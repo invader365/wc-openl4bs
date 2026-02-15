@@ -1,10 +1,11 @@
-
 import type { FC } from 'react';
-import './Home.css'
+import { SEO } from '../components/SEO';
+import './Home.css';
 
 export const Home: FC = () => {
     return (
         <main>
+            <SEO title="Home | OpenL4bs" description="Welcome to OpenL4bs - A Playground of Powerful Micro-Apps." />
             <h1>Welcome to OpenL4bs</h1>
             <p>
                 <strong>A Playground of Powerful Micro-Apps</strong>
