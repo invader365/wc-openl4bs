@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 interface SEOProps {
     title: string;
@@ -8,25 +8,29 @@ interface SEOProps {
 }
 
 export const SEO = ({ title, description, name = 'openl4bs', type = 'website' }: SEOProps) => {
-    return (
-        <Helmet>
-            { /* Standard metadata tags */}
-            <title>{title}</title>
-            <meta name='description' content={description} />
-            { /* End standard metadata tags */}
+    useEffect(() => {
+        document.title = title;
 
-            { /* Facebook tags */}
-            <meta property="og:type" content={type} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            { /* End Facebook tags */}
+        const setMetaTag = (attr: string, key: string, content: string) => {
+            let element = document.querySelector(`meta[${attr}="${key}"]`);
+            if (!element) {
+                element = document.createElement('meta');
+                element.setAttribute(attr, key);
+                document.head.appendChild(element);
+            }
+            element.setAttribute('content', content);
+        };
 
-            { /* Twitter tags */}
-            <meta name="twitter:creator" content={name} />
-            <meta name="twitter:card" content={type} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            { /* End Twitter tags */}
-        </Helmet>
-    );
+        setMetaTag('name', 'description', description);
+        setMetaTag('property', 'og:type', type);
+        setMetaTag('property', 'og:title', title);
+        setMetaTag('property', 'og:description', description);
+        setMetaTag('name', 'twitter:creator', name);
+        setMetaTag('name', 'twitter:card', type);
+        setMetaTag('name', 'twitter:title', title);
+        setMetaTag('name', 'twitter:description', description);
+
+    }, [title, description, name, type]);
+
+    return null;
 };
