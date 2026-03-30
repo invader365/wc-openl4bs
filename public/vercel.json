@@ -1,7 +1,7 @@
 {
     "rewrites": [
         {
-            "source": "/cup26/:path*",
+            "source": "/wc-schedule.vercel.app/:path*",
             "destination": "https://wc-schedule.vercel.app/:path*"
         }
     ]

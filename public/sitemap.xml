@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://cup26.openl4bs.cc/</loc>
+    <lastmod>2024-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://openl4bs.cc/explore</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>

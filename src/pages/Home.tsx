@@ -8,7 +8,7 @@ export const Home: FC = () => {
             <SEO title="Home | OpenL4bs" description="Welcome to OpenL4bs - A Playground of Powerful Micro-Apps." />
             <h1>Welcome to OpenL4bs</h1>
             <p>
-                <strong>A Playground of Powerful Micro-Apps</strong>
+                <strong>A Playground of Powerful Micro-Apps.</strong>
                 OpenL4bs is where ideas turn into action — instantly.
                 Explore a growing collection of lightweight, focused micro-apps designed to help you think faster, build smarter, and solve real problems without the clutter.
             </p>
